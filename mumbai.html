@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Mumbai - The City of Dreams</title>
+    <style>
+        /* General body styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            /* Subtle gradient background */
+            color: #333;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        /* Navbar styling */
+        nav {
+            background-color: #074587;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+            /* Golden color on hover */
+            text-decoration: underline;
+        }
+
+        /* Main container for the city content */
+        .city-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .city-container:hover {
+            transform: scale(1.02);
+            /* Subtle zoom effect on hover */
+        }
+
+        /* City title with animation */
+        h1 {
+            font-size: 48px;
+            color: #213244;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+            font-family: 'Georgia', serif;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Paragraph with ID for description */
+        #description {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            max-width: 700px;
+            margin: 20px auto;
+            text-align: justify;
+        }
+
+        /* Custom styling for the city location */
+        #location {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2980b9;
+            margin-top: 20px;
+        }
+
+        /* Footer styling */
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #777;
+            background-color: #074587;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Styles for each image container */
+        .images-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .images-container div {
+            width: 30%;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Image styling */
+        .city-image {
+            width: 100%;
+            height: auto;
+            border: 5px solid #3498db;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+            /* Ensures border doesn't affect layout */
+        }
+
+        .city-image:hover {
+            transform: scale(1.05);
+            /* Zoom effect */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            /* Enhanced shadow on hover */
+        }
+
+        /* Image captions styling */
+        .image-caption {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .image-caption:hover {
+            background-color: #FFD700;
+            /* Golden color on hover */
+            color: white;
+        }
+
+        /* Smooth Scroll Styling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Learn More Button */
+        .learn-more-btn {
+            margin-top: 40px;
+            padding: 12px 25px;
+            background-color: #2980b9;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .learn-more-btn:hover {
+            background-color: #FFD700;
+        }
+
+        /* Highlight specific words in description */
+        .highlight {
+            text-decoration: underline;
+            background-color: #f1c40f;
+            /* Highlight color */
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Hidden content */
+        .hidden-content {
+            display: none;
+            margin-top: 30px;
+            text-align: left;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .highlight-in-hidden {
+            text-decoration: underline;
+            background-color: #f1c40f;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#images">Images</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="city-container" id="home">
+        <!-- City Title -->
+        <h1><b><u>Explore Mumbai - The City of Dreams</u></b></h1>
+
+        <!-- City Description with ID -->
+        <p id="description"><b>
+                Mumbai, the financial capital of India, is a city that never sleeps. Known for its bustling streets,
+                high-rise buildings,
+                historic landmarks, and vibrant culture, Mumbai is home to Bollywood and millions of people. From the
+                iconic <span class="highlight">Gateway of India</span>
+                to the serene <span class="highlight">Marine Drive</span>, Mumbai offers an unparalleled experience.
+                <br><br>
+                It’s a city of contrasts where modernity meets history, and dreams meet reality. Whether you're
+                strolling down Juhu Beach or
+                exploring the famous <span class="highlight">Elephanta Caves</span>, Mumbai offers something for
+                everyone.</b>
+        </p>
+
+        <!-- Location Information with ID -->
+        <p id="location"><b><u>Location: Maharashtra, India</u></b></p>
+
+        <!-- Learn More Button -->
+        <button class="learn-more-btn" onclick="toggleContent()">Learn More</button>
+
+        <!-- Hidden Content Section -->
+        <div class="hidden-content" id="more-info">
+            <p><b><u>Additional Information:</u></b></p>
+            <p><b>Mumbai is also known for its vibrant nightlife, luxurious shopping malls, and delicious street food. The
+                city is home to a rich
+                cultural diversity, with people from all over the country and the world living and working here. The
+                monsoon season adds a special charm
+                to Mumbai, transforming the city into a lush green paradise.</p>
+            <p>Aside from being a hub for finance, Mumbai is a major center for arts, theatre, and music. If you enjoy
+                exploring local markets,
+                visit the famous <span class="highlight-in-hidden">Crawford Market</span> or take a walk down <span
+                    class="highlight-in-hidden">Colaba Causeway</span> for some unique finds.</p>
+            <p>The <span class="highlight-in-hidden">Elephanta Caves</span> are a UNESCO World Heritage Site, located on
+                Elephanta Island. These caves, which house rock-cut temples dedicated to Lord Shiva, are a must-visit
+                historical site.</b></p>
+        </div>
+
+        <!-- Image Section with 2-3 images -->
+        <div class="images-container" id="images">
+            <div>
+                <img src="https://static.wixstatic.com/media/8d199a_e70c36eeb2cd4d498c10f0261f71bb51~mv2.png/v1/fill/w_528,h_706,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/8d199a_e70c36eeb2cd4d498c10f0261f71bb51~mv2.png"
+                    alt="Marine Drive" class="city-image">
+                <p class="image-caption">Marine Drive - Mumbai</p>
+            </div>
+            <div>
+                <img src="https://e0.pxfuel.com/wallpapers/644/386/desktop-wallpaper-india-gate-gateway-of-india.jpg"
+                    alt="Gateway of India" class="city-image">
+                <p class="image-caption">Gateway of India - Mumbai</p>
+            </div>
+            <div>
+                <img src="https://preview.redd.it/mumbais-ever-growing-skyline-v0-knddnqcpueca1.jpg?width=1080&crop=smart&auto=webp&s=912324e763938f59982f1f8d587a0d4ea5562b95"
+                    alt="Mumbai Skyline" class="city-image">
+                <p class="image-caption">Skyline - Mumbai</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Explore India. All rights reserved.
+            <b><u>Developed by Alok.</u></b>
+        </p>
+    </footer>
+
+    <script>
+        function toggleContent() {
+            var moreInfo = document.getElementById("more-info");
+            if (moreInfo.style.display === "none" || moreInfo.style.display === "") {
+                moreInfo.style.display = "block"; // Show the content
+            } else {
+                moreInfo.style.display = "none"; // Hide the content
+            }
+        }
+    </script>
+
+</body>
+
+</html>

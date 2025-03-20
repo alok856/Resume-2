@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Bihar - The Heart of India</title>
+    <!-- Google Font for Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        #navbar {
+            background-color: #5a1d00;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #navbar nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        #navbar nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        #navbar nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Navbar Hover Effect */
+        #navbar nav ul li a:hover {
+            color: #FFD700;
+            transform: scale(1.1);
+        }
+
+        /* Hero Image Section */
+        .hero-image {
+            background-image: url('https://media2.thrillophilia.com/images/photos/000/245/688/original/1624434450_shutterstock_1535561528.jpg?w=753&h=450&dpr=1.5');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+            background-attachment: fixed;
+        }
+
+        .hero-image h1 {
+            font-size: 60px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .hero-image p {
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        /* About Section */
+        #about {
+            padding: 60px 20px;
+            background-color: white;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #about h2 {
+            font-size: 36px;
+            color: #5a1d00;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 20px;
+            line-height: 1.8;
+            margin: 0 auto 30px;
+            max-width: 800px;
+            text-align: justify;
+        }
+
+        #about .highlight {
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        /* Images of Bihar */
+        .city-images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        .city-images img {
+            width: 250px;
+            height: 150px;
+            border-radius: 12px;
+            border: 4px solid #5a1d00;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Stylish Hover Effect for Images */
+        .city-images img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border-color: #FFD700;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .image-container h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #5a1d00;
+            margin-top: 10px;
+        }
+
+        /* Top Attractions Section */
+        #attractions {
+            background-color: #f9f9f9;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #attractions h2 {
+            font-size: 36px;
+            color: #978415;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        #attractions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #attractions ul li {
+            font-size: 22px;
+            padding: 15px 0;
+            border-bottom: 2px solid #ddd;
+        }
+
+        #attractions ul li span {
+            color: #5a1d00;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #5a1d00;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        #contact p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <header id="navbar">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Bihar</a></li>
+                <li><a href="#attractions">Top Attractions</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Image Section -->
+    <section id="home">
+        <div class="hero-image">
+            <h1><b>Welcome to Bihar</b></h1>
+            <p><b><u>Explore the rich heritage of the Heart of India</u></b></p>
+        </div>
+    </section>
+
+    <!-- About Bihar Section -->
+    <section id="about">
+        <h2><b><u>About Bihar</u></b></h2>
+        <p>Bihar, one of India's most historically significant states, is a land of rich culture, ancient history, and spiritual heritage. From the ancient university of Nalanda to the sacred city of Bodh Gaya, Bihar is a destination that blends tradition and modernity seamlessly. The state is known for its glorious past, vibrant culture, and incredible people.</p>
+    </section>
+
+    <div class="city-images">
+        <div class="image-container">
+            <img src="https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/12/shutterstock_402120757-1.webp" alt="Bodh Gaya">
+            <h4><b><u>Bodh Gaya</u></b></h4>
+        </div>
+        <div class="image-container">
+            <img src="https://binarysocial.wordpress.com/wp-content/uploads/2022/09/973ca-the-glorious-history-and-the-revival-story-of-nalanda-university-binary-social-compressed.png" alt="Nalanda University">
+            <h4><b><u>Nalanda University</u></b></h4>
+        </div>
+        <div class="image-container">
+            <img src="https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/patna/takht_sri_harmandir_sahib/sikhism_patna_a_takht_sri_harmandir_sahib_pic_02.jpg/jcr:content/renditions/cq5dam.web.480.480.jpeg" alt="Patna Sahib">
+            <h4><b><u>Patna Sahib</u></b></h4>
+        </div>
+    </div>
+
+    <!-- Top Attractions Section -->
+    <section id="attractions">
+        <h2><b><u>Top Attractions in Bihar</u></b></h2>
+        <ul>
+            <li><span>Bodh Gaya</span> - The Sacred Land of Buddha</li>
+            <li><span>Nalanda</span> - The Ancient University</li>
+            <li><span>Patna Sahib</span> - A Spiritual Hub</li>
+            <li><span>Mandar Hill</span> - The Mythical Site of Samudra Manthan</li>
+            <li><span>Vaishali</span> - The Birthplace of Lord Mahavira</li>
+            <li><span>Rajgir</span> - A Historical City with Hot Springs</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2><b><u>Contact Us</u></b></h2>
+        <p>Email: biharinfo@tourism.com <br> <br>Call: 0123456789</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Explore Bihar - All Rights Reserved <br><br><b><u>Developed_by_Alok.</u></b></p>
+    </footer>
+
+</body>
+</html>

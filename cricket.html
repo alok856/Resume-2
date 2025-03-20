@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Images with Indian Flag Background</title>
+    <style>
+        /* Set the background image of the page to the Indian flag */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            position: relative;
+            animation: changeBackground 6s infinite; /* Animation to change background every 6s */
+        }
+
+        /* Add a low-light overlay to darken the background */
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Darker overlay for stronger low-light effect */
+            z-index: -1; /* Behind the content */
+        }
+
+        /* Background images that will change */
+        @keyframes changeBackground {
+            0% {
+                background: url('https://static.vecteezy.com/system/resources/thumbnails/028/695/557/small_2x/indian-flag-abstract-background-wallpaper-for-independence-day-on-15-august-ai-generative-free-photo.jpg') no-repeat center center fixed;
+                background-size: cover;
+            }
+            20% {
+                background: url('https://static.vecteezy.com/system/resources/thumbnails/025/239/226/small_2x/indian-flag-waving-symbol-of-freedom-and-patriotism-generated-by-ai-photo.jpg') no-repeat center center fixed;
+                background-size: cover;
+            }
+            40% {
+                background: url('https://static.vecteezy.com/system/resources/thumbnails/035/978/555/small_2x/ai-generated-national-flag-of-india-with-a-cloud-of-colored-smoke-on-a-black-background-indian-flag-colors-tech-wallpaper-ai-generated-free-photo.jpg') no-repeat center center fixed;
+                background-size: cover;
+            }
+            60% {
+                background: url('https://wallpapers.com/images/hd/india-map-diagonal-pattern-imd2lgmylz3rwdnu.jpg') no-repeat center center fixed;
+                background-size: cover;
+            }
+            80% {
+                background: url('https://t3.ftcdn.net/jpg/06/19/33/84/360_F_619338481_3TUXj2juPmstEnrwbgfo5yTlvsSZmr2x.jpg') no-repeat center center fixed;
+                background-size: cover;
+            }
+            100% {
+                background: url('https://as2.ftcdn.net/v2/jpg/06/80/00/81/1000_F_680008125_ZzkC794WxGBjv3wAJgufNYA9xTa6qlIx.jpg') no-repeat center center fixed;
+                background-size: cover;
+            }
+        }
+
+        /* Style the player container to arrange images in a row */
+        .player-container {
+            display: flex;
+            gap: 70px;
+            flex-wrap: wrap;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        /* Each player image has a border and circular shape */
+        .player {
+            width: 150px;
+            height: 150px;
+            border-radius: 45%;
+            overflow: hidden;
+            border: 5px solid #7e3e3f; /* Border color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Ensure images cover the container properly */
+        .player img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease; /* Image hover effect */
+        }
+
+        /* Styling for the short names below the player images */
+        .player-name {
+            margin-top: 10px;
+            font-size: 18px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 160px;  /* Position the name directly below the image */
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s ease; /* Quick fade-in effect */
+        }
+
+        /* Hover effect on player image */
+        .player:hover img {
+            transform: scale(1.1); /* Zoom in on hover */
+        }
+
+        /* Hover effect on player name */
+        .player:hover .player-name {
+            opacity: 1; /* Makes the name visible */
+        }
+
+        /* Title styling */
+        h1 {
+            position: absolute;
+            top: 20px;
+            font-size: 36px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+<h1><b><u>Cricket-Legends</u></b></h1>
+
+<div class="background-overlay"></div>
+
+<div class="player-container">
+    <div class="player">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTissRFH2ZnzaIOJus_XKhwRkDm8j-hsWPeIQ&s" alt="MSD">
+        <div class="player-name">MSD</div>
+    </div>
+    <div class="player">
+        <img src="https://c.ndtvimg.com/2025-03/ufsk9568_rohit-sharma-bcci_625x300_03_March_25.jpg?im=FeatureCrop,algorithm=dnn,width=806,height=605" alt="Hitman">
+        <div class="player-name">Hitman</div>
+    </div>
+    <div class="player">
+        <img src="https://i.pinimg.com/736x/55/65/32/5565328275c0c39c75a1e7d1897e3831.jpg" alt="Jaddu">
+        <div class="player-name">Jaddu</div>
+    </div>
+    <div class="player">
+        <img src="https://i.brecorder.com/primary/2023/03/121244321827d24.jpg" alt="Kohli">
+        <div class="player-name">Kohli</div>
+    </div>
+    <div class="player">
+        <img src="https://imgk.timesnownews.com/story/Hardik-solo-MI-BCCI-IPL.jpg" alt="Pandya">
+        <div class="player-name">Pandya</div>
+    </div>
+    <div class="player">
+        <img src="https://pbs.twimg.com/media/GRU807-WgAA9hQ3?format=jpg&name=large" alt="Bumrah">
+        <div class="player-name">Bumrah</div>
+    </div>
+</div>
+
+</body>
+</html>

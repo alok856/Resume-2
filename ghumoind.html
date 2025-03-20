@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghumo India - Explore the Best of India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and body styling */
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f1f1f1;
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* Header Section */
+        header {
+            background-image: url('india-header.jpg'); /* Hero image */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 120px 0;
+            color: white;
+            position: relative;
+            background: linear-gradient(to top right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('india-header.jpg');
+        }
+
+        header h1 {
+            font-size: 60px;
+            font-weight: 700;
+            animation: fadeIn 2s ease-out;
+        }
+
+        header p {
+            font-size: 20px;
+            animation: fadeIn 3s ease-out;
+        }
+
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Navigation bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            background-color: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #3498db;
+            transform: scale(1.1);
+        }
+
+        .auth-buttons a {
+            margin-left: 20px;
+            padding: 12px 30px;
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .auth-buttons a:hover {
+            background-color: #2980b9;
+            transform: scale(1.1);
+        }
+
+        /* Main Content Section */
+        section {
+            padding: 60px 20px;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeInSection 2s forwards;
+        }
+
+        @keyframes fadeInSection {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 35px;
+            color: #2980b9;
+            font-weight: bold;
+        }
+
+        /* Common styles for destination and gallery sections */
+        .destinations, .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+
+        /* Destination and Gallery Cards */
+        .destination, .image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
+        }
+
+        .destination img, .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            border-radius: 12px;
+        }
+
+        /* Hover effects on cards */
+        .destination:hover, .image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Destination Info (Text shown on hover) */
+        .destination-info, .gallery-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .destination:hover .destination-info, .gallery:hover .gallery-info {
+            opacity: 1;
+        }
+
+        .destination-info h3, .gallery-info h3 {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Add Learn More Button */
+        .destination-info a, .gallery-info a {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .destination-info a:hover, .gallery-info a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 35px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .destinations, .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .destination-info h3, .gallery-info h3 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <!-- Login/SignUp Buttons -->
+        <div class="auth-buttons">
+            <a href="#login">Login</a>
+            <a href="#signup">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Explore India Like Never Before</h1>
+        <p>Your ultimate travel guide to discovering India's beauty and culture</p>
+    </header>
+
+    <!-- Popular Destinations Section -->
+    <section id="destinations">
+        <h2>Popular Destinations</h2>
+        <div class="destinations">
+            <div class="destination">
+                <img src="https://t3.ftcdn.net/jpg/00/77/00/26/360_F_77002615_Gl1Hk6qZpi2xCAlX8EUTRLBqC4ei6QfC.jpg" alt="Goa">
+                <div class="destination-info">
+                    <h3>Goa</h3>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="destination">
+                <img src="https://www.puredestinations.co.uk/wp-content/uploads/2016/11/TAJ-MAHAL-PD-BLOG.jpg" alt="Taj Mahal">
+                <div class="destination-info">
+                    <h3>Taj Mahal</h3>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="destination">
+                <img src="https://static.toiimg.com/photo/58490365/.jpg" alt="Kerala">
+                <div class="destination-info">
+                    <h3>Kerala</h3>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <div class="image">
+                <img src="https://media.istockphoto.com/id/511119924/photo/tea-plantations-and-river-in-hills-kerala-india.jpg?s=612x612&w=0&k=20&c=pYHem1q8SIdCC7t7pv3s6QM1ZrmU3nkCoSaEQMg8vqg=" alt="Image 1">
+                <div class="gallery-info">
+                    <h3>Beautiful Landscapes</h3>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="image">
+                <img src="https://www.fabhotels.com/blog/wp-content/uploads/2018/09/Red-Fort.jpg" alt="Image 2">
+                <div class="gallery-info">
+                    <h3>Historic Monuments</h3>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Chhath-Puja-Bihar.jpg/2560px-Chhath-Puja-Bihar.jpg" alt="Image 3">
+                <div class="gallery-info">
+                    <h3>Traditional Culture</h3>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or want to book a trip, reach out to us!</p>
+        <p>Email: <a href="mailto:contact@ghumoindia.com">contact@ghumoindia.com</a></p>
+        <p>Phone: +91-1234567890</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Ghumo India. All rights reserved.</p>
+        <p>Follow us on <a href="https://twitter.com/ghumoindia" target="_blank">Twitter</a> | <a href="https://instagram.com/ghumoindia" target="_blank">Instagram</a></p>
+    </footer>
+
+</body>
+</html>
